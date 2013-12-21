@@ -1,12 +1,17 @@
-package hello
-/**
- * Created by recovery on 12/19/13.
- */
 
-vertx.createHttpServer().requestHandler { req ->
-    def file = req.uri == "/" ? "index.html" : req.uri
-    req.response.sendFile "webroot/$file"
+//
+//def number = 5
+//number.times {
+//    d -> print(d)
+//}
 
-}.listen(8080)
+def list = [1,2,3,5,6,7];
+def rs = list.findAll {
+    x -> x > 5
+}
 
+def con = { x, y ,z -> x + y + z }
+
+
+print con(10,20,30);
 

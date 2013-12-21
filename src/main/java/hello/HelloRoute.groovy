@@ -6,12 +6,14 @@ import org.vertx.java.core.http.RouteMatcher
 
 class HelloRoute extends  RouteMatcher {
     def HelloRoute(){
+
         super()
+
         this.get("/hello" , new Handler<HttpServerRequest>() {
             @Override
             void handle(HttpServerRequest request) {
-                print(request.uri());
-                request.response().end("bye!");
+                print(request.uri())
+                request.response().end("bye!")
             }
         })
 
@@ -23,5 +25,20 @@ class HelloRoute extends  RouteMatcher {
                 request.response().end("good!")
             }
         })
+
+//        this.get("/index", new Handler<HttpServerRequest>() {
+//            @Override
+//            void handle(HttpServerRequest request) { request.response().sendFile("index.html"); }
+//        })
+//
+//        this.get("/sockjs-0.3.min.js", new Handler<HttpServerRequest>() {
+//            @Override
+//            void handle(HttpServerRequest request) { request.response().sendFile("sockjs-0.3.min.js"); }
+//        })
+//
+//        this.get("/vertxbus-2.1.js", new Handler<HttpServerRequest>() {
+//            @Override
+//            void handle(HttpServerRequest request) { request.response().sendFile("vertxbus-2.1.js"); }
+//        })
     }
 }
